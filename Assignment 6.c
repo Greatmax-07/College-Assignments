@@ -3,10 +3,11 @@ struct Property{
     char name[10];
     int price;
     int originalOrder;
+    int amenities;
 };
 int main() {
     struct Property properties[5]={
-        {"1BHK", 0, 0}, {"2BHK", 0, 1}, {"3BHK", 0, 2}, {"4BHK", 0, 3}, {"RowHouse", 0, 4}
+        {"1BHK", 0, 0, 2}, {"2BHK", 0, 1, 4}, {"3BHK", 0, 2, 5}, {"4BHK", 0, 3, 6}, {"RowHouse", 0, 4, 8}
     };
     int parkingCost;
     printf("Enter the prices that you have decided:\n");
@@ -47,9 +48,11 @@ int main() {
             }
         }
     }
-    printf("\nProperties in descending order of price (including parking cost):\n");
+    printf("\nOur Recommendations:\n");
     for(int i=0;i<5;i++){
-        printf("%s: Rs. %d\n",properties[i].name, properties[i].price);
+        printf("%s: Rs. %d with %d amenities.\n",properties[i].name, properties[i].price, properties[i].amenities);
     }
+
+    printf("You may choose your desired property according to your budget.");
     return 0;
 }
