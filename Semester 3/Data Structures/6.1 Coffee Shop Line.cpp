@@ -6,7 +6,7 @@ Write a program to implement a simple queue*/
 #include<iostream>
 using namespace std;
 class coffee{
-    int queue[5];
+    int queue[10];
     int rear=-1;
     int front=-1;
     int token=0;
@@ -15,7 +15,7 @@ public:
         return (front==-1 || front>rear);
     }  
     bool isFull(){
-        if(rear==5){
+        if(rear==9){
             cout<<"Queue is full. Please wait."<<endl;
             return 1;
             }
